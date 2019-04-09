@@ -1,0 +1,17 @@
+<configuration debug="false" scan="false">
+
+    <!-- log human-readable strings to STDOUT-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %-5level [%thread] - [%logger] [%mdc] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="${LOG_ROOT_LEVEL:-WARN}">
+        <appender-ref ref="${APPENDER:-STDOUT}"/>
+    </root>
+
+    <logger name="com.sap.grc.archimedes" level="${LOG_APP_LEVEL:-INFO}"/>
+   
+    
+</configuration>
